@@ -155,8 +155,8 @@ function ground(kw)
         generated_func = quote
             $Implication(__orig_instance -> __instance -> ($cond_body && !($conseq_imp_body)),
                 __orig_instance -> $conseq_inputargs -> $conseq_body,
-                GeCo.make_source_concrete($(cond_source)),
-                GeCo.make_source_concrete($(conseq_source)) )
+                GeCo_G.make_source_concrete($(cond_source)),
+                GeCo_G.make_source_concrete($(conseq_source)) )
         end
 
     # elseif kw.head == :generator
@@ -188,7 +188,7 @@ function ground(kw)
         inputargs::Expr = Expr(:tuple, values(membernames)...)
 
         generated_func = quote
-            $Constraint(GeCo.make_source_concrete($(source)), __orig_instance -> $inputargs -> $body)
+            $Constraint(GeCo_G.make_source_concrete($(source)), __orig_instance -> $inputargs -> $body)
         end
     end
 
