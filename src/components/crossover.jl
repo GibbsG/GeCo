@@ -35,6 +35,8 @@ function crossover!(population::DataFrame, orig_instance::DataFrameRow, feasible
             println(index+1)
             println(group.names)
             println(selective_mutation[index+1,group.names])
+            println(space)
+            println(space[sampled_row,group.names])
             selective_mutation[index+1,group.names] = space[sampled_row,group.names]
             valid_mutations[index+1] = actionCascade(selective_mutation[index+1,:], feasible_space.implications)
 
