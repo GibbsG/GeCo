@@ -1,4 +1,4 @@
-module GeCo
+module GeCo_G
 
 export explain, actions, featureList, initializeFeatures, testExplanations
 
